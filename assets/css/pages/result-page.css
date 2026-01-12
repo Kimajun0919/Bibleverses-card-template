@@ -213,11 +213,11 @@
 
 .result-button {
     flex: 1;
-    padding: var(--space-button-padding);
+    padding: var(--space-start-button-padding);
     background: var(--color-surface-glass-strong);
     border: var(--size-border-width) solid var(--color-primary-border);
     color: var(--color-primary);
-    font-size: var(--font-size-verse-reference);
+    font-size: var(--font-size-button);
     border-radius: var(--radius-pill);
     cursor: pointer;
     backdrop-filter: blur(var(--shadow-glass-button-blur));
