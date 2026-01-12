@@ -17,10 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 로딩 중 이탈 방지
-    window.addEventListener('beforeunload', function(event) {
+    const handleBeforeUnload = function(event) {
         event.preventDefault();
         event.returnValue = '';
-    });
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
 
     // 주기적으로 히스토리 쌓기 (뒤로가기 방지)
     const historyBlockInterval = setInterval(function() {
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 로딩 시간 후 결과 페이지로 이동
     setTimeout(() => {
         clearInterval(historyBlockInterval);
-        window.removeEventListener('beforeunload', arguments.callee);
+        window.removeEventListener('beforeunload', handleBeforeUnload);
 
         const randomVerse = getValidVerse();
 
@@ -54,4 +55,3 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = `result.html?${params.toString()}`;
     }, 1500);
 });
-
