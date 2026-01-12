@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const MAX_TRIES = Math.min(verses.length, 50);
 
     function getValidVerse() {
+        const scheduled = typeof getVerseForToday === 'function' ? getVerseForToday() : null;
+        if (scheduled && scheduled.content && scheduled.reference) {
+            return scheduled;
+        }
+
         for (let i = 0; i < MAX_TRIES; i++) {
             const candidate = verses[getNextVerseIndex()];
             if (candidate && candidate.content && candidate.reference) {
