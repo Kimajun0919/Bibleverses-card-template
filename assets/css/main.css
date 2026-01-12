@@ -20,6 +20,146 @@
     font-style: normal;
 }
 
+:root {
+    /* colors */
+    --color-primary: rgba(12, 68, 59, 1);
+    --color-primary-tint: rgba(12, 68, 59, 0.12);
+    --color-primary-border: rgba(12, 68, 59, 0.4);
+    --color-primary-border-strong: rgba(12, 68, 59, 0.6);
+    --color-neutral900: #2c2c2c;
+    --color-neutral800: #444444;
+    --color-neutral750: #333333;
+    --color-neutral700: #666666;
+    --color-neutral600: #999999;
+    --color-surface: rgba(255,255,255,0.95);
+    --color-surface-glass: rgba(255,255,255,0.2);
+    --color-surface-glass-strong: rgba(255,255,255,0.3);
+    --color-surface-solid: #ffffff;
+    --color-loading-ring: #ffffff;
+
+    /* typography */
+    --font-display: 'GungnipClassic', serif;
+    --font-heading: 'GungnipClassic', serif;
+    --font-body: 'Noto Serif KR', serif;
+    --font-accent: 'GungnipClassic', serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-size-hero: clamp(36px, 8vw, 72px);
+    --font-size-subtitle: clamp(30px, 3vw, 42px);
+    --font-size-body: clamp(12px, 2vw, 18px);
+    --font-size-body-small: clamp(10px, 1.8vw, 16px);
+    --font-size-button: clamp(16px, 2vw, 18px);
+    --font-size-loading: clamp(16px, 2.5vw, 20px);
+    --font-size-result-year: clamp(14px, 2vw, 18px);
+    --font-size-result-title: clamp(20px, 3vw, 28px);
+    --font-size-verse: clamp(16px, 2.5vw, 20px);
+    --font-size-verse-reference: clamp(14px, 2vw, 16px);
+    --font-size-result-logo: clamp(12px, 1.5vw, 14px);
+    --font-size-result-logo-saving: 22px;
+    --font-size-result-year-saving: 32px;
+    --font-size-result-title-saving: 44px;
+    --font-size-verse-saving: 34px;
+    --font-size-verse-reference-saving: 26px;
+    --font-line-height-tight: 1.2;
+    --font-line-height-body: 1.6;
+    --font-line-height-heading: 1.4;
+    --font-line-height-verse: clamp(1.6, 0.2vw + 1.5, 2);
+    --font-line-height-verse-saving: 1.8;
+    --font-letter-spacing-hero: 2px;
+    --font-letter-spacing-subtitle: clamp(2px, 1vw, 8px);
+    --font-letter-spacing-body: 1px;
+    --font-letter-spacing-result-year: 2px;
+    --font-letter-spacing-result-title: clamp(2px, 0.5vw, 4px);
+    --font-letter-spacing-result-logo: 2px;
+    --font-letter-spacing-result-logo-saving: 3px;
+    --font-letter-spacing-saving-title: 6px;
+    --font-letter-spacing-saving-reference: 1px;
+    --font-letter-spacing-loading: 2px;
+
+    /* spacing */
+    --space-hero-padding: 40px 20px;
+    --space-hero-padding-tablet: 30px 15px;
+    --space-hero-padding-mobile: 20px 15px;
+    --space-hero-title-margin: 20px;
+    --space-hero-subtitle-margin: 30px;
+    --space-verse-margin-top: 14px;
+    --space-start-button-margin: 60px;
+    --space-start-button-margin-tablet: 40px;
+    --space-start-button-margin-mobile: 30px;
+    --space-start-button-padding: 18px 50px;
+    --space-start-button-padding-tablet: 16px 40px;
+    --space-start-button-padding-mobile: 14px 30px;
+    --space-loading-icon-margin: 40px;
+    --space-loading-icon-margin-mobile: 30px;
+    --space-layout-padding: 40px 20px;
+    --space-layout-padding-tablet: 30px 15px;
+    --space-layout-padding-mobile: 20px 10px;
+    --space-card-padding: clamp(30px, 5vw, 60px) clamp(25px, 4vw, 50px);
+    --space-card-padding-tablet: 40px 35px;
+    --space-card-padding-mobile: 35px 25px;
+    --space-card-padding-small: 30px 20px;
+    --space-card-padding-tiny: 25px 15px;
+    --space-card-margin-bottom: 40px;
+    --space-header-margin-bottom: clamp(20px, 4vw, 40px);
+    --space-verse-margin: clamp(20px, 4vw, 40px);
+    --space-verse-padding-inline: 0 10px;
+    --space-verse-padding-saving: 0 20px;
+    --space-verse-margin-bottom-saving: 30px;
+    --space-verse-wrapper-gap: 15px;
+    --space-logo-margin-top: clamp(20px, 4vw, 40px);
+    --space-button-gap: clamp(12px, 2vw, 20px);
+    --space-button-row-gap-mobile: clamp(10px, 2vw, 15px);
+    --space-button-container-gap: clamp(12px, 2vw, 20px);
+    --space-button-container-gap-mobile: clamp(10px, 2vw, 15px);
+    --space-saving-padding-top: 220px;
+    --space-saving-card-padding: 100px 70px;
+    --space-saving-card-margin-bottom: 200px;
+    --space-saving-logo-bottom: 40px;
+    --space-saving-logo-margin-bottom: 40px;
+    --space-result-year-margin-bottom: 10px;
+    --space-result-year-margin-bottom-saving: 20px;
+
+    /* size */
+    --size-loading-icon: clamp(80px, 15vw, 120px);
+    --size-loading-ring-width: 3px;
+    --size-card-max-width: 600px;
+    --size-content-width: 90%;
+    --size-button-container-max-width: 600px;
+    --size-button-container-width: 90%;
+    --size-border-width: 2px;
+    --size-hover-lift: -2px;
+    --size-saving-card-width: 720px;
+    --size-saving-card-min-height: 1100px;
+    --size-saving-container-width: 1080px;
+    --size-saving-container-height: 1920px;
+    --size-logo-width: 180px;
+
+    /* radius */
+    --radius-pill: 50px;
+    --radius-card: 30px;
+    --radius-card-large: 40px;
+    --radius-card-medium: 20px;
+    --radius-card-small: 15px;
+
+    /* shadow */
+    --shadow-text-glow: 0 0 30px rgba(255,255,255,0.5);
+    --shadow-card: 0 20px 60px rgba(0,0,0,0.2);
+    --shadow-card-strong: 0 30px 80px rgba(0,0,0,0.25);
+    --shadow-button: 0 10px 30px rgba(12, 68, 59, 0.18);
+    --shadow-glass-card-blur: 20px;
+    --shadow-glass-button-blur: 10px;
+    --shadow-logo-saving-opacity: 0.5;
+
+    /* motion */
+    --motion-transition-fast: all 0.3s ease;
+    --motion-spin-duration: 1s;
+    --motion-spin-timing: linear;
+
+    /* assets */
+    --asset-background: url('/assets/images/back.jpg');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -27,12 +167,12 @@
 }
 
 body {
-    font-family: 'Noto Serif KR', serif;
+    font-family: var(--font-body);
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-/* 공통 반응형 스타일 */
+/* 공통 반응형 처리 */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;

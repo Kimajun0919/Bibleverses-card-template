@@ -15,36 +15,19 @@
     <title>결과 - The Steps of Haneul</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/images/HaneulLogo.png">
+    <link rel="icon" type="image/png" href="../assets/logos/HaneulLogo.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- Adobe Fonts -->
-    <script>
-    (function(d) {
-      var config = {
-        kitId: 'wcb3eag',
-        scriptTimeout: 3000,
-        async: true
-      },
-      h=d.documentElement,t=setTimeout(function(){
-        h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";
-      },config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;
-      h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';
-      tk.async=true;tk.onload=tk.onreadystatechange=function(){
-        a=this.readyState;
-        if(f||a&&a!="complete"&&a!="loaded")return;
-        f=true;clearTimeout(t);
-        try{Typekit.load(config)}catch(e){}
-      };
-      s.parentNode.insertBefore(tk,s)
-    })(document);
-  </script>
+    
     
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
+    <!-- Design Tokens -->
+    <script type="module" src="../design/index.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/pages/result-page.css">
@@ -72,7 +55,7 @@
             <!-- 하단 -->
             <div class="result-logo">The Steps of Haneul</div>
         </div>
-        <img src="../assets/images/HaneulLogo.png" alt="Haneul Logo" class="haneul-logo">
+        <img src="../assets/logos/HaneulLogo.png" data-asset="logo" alt="Haneul Logo" class="haneul-logo">
 
         <div class="button-container">
             <div class="button-row">

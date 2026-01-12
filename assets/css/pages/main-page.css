@@ -1,7 +1,7 @@
 /* 메인 페이지 */
 .main-container {
     min-height: 100vh;
-    background-image: url('/assets/images/back.jpg');
+    background-image: var(--asset-background);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,36 +17,36 @@
     text-align: center;
     z-index: 10;
     position: relative;
-    padding: 40px 20px;
+    padding: var(--space-hero-padding);
 }
 
 .main-title {
-    font-family: "flirt-script-regular", sans-serif;
-    font-size: clamp(36px, 8vw, 72px);
-    color: rgba(12, 68, 59, 1);
-    font-weight: 400;
+    font-family: var(--font-display);
+    font-size: var(--font-size-hero);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-regular);
     font-style: normal;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    line-height: 1.2;
-    text-shadow: 0 0 30px rgba(255,255,255,0.5);
+    margin-bottom: var(--space-hero-title-margin);
+    letter-spacing: var(--font-letter-spacing-hero);
+    line-height: var(--font-line-height-tight);
+    text-shadow: var(--shadow-text-glow);
 }
 
 .main-subtitle {
-    font-family: 'GungnipClassic', serif;    
-    font-size: clamp(30px, 3vw, 42px);
-    color: rgba(12, 68, 59, 1);
-    font-weight: 300;
-    letter-spacing: clamp(2px, 1vw, 8px);
-    margin-top: 30px;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-subtitle);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-light);
+    letter-spacing: var(--font-letter-spacing-subtitle);
+    margin-top: var(--space-hero-subtitle-margin);
 }
 
 .bible-verse {
-    font-size: clamp(12px, 2vw, 18px);
-    font-weight: 400;
-    color: #444;
-    margin-top: 14px;
-    line-height: 1.6;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-neutral800);
+    margin-top: var(--space-verse-margin-top);
+    line-height: var(--font-line-height-body);
     text-align: center;
     white-space: pre-line;
     word-break: keep-all;
@@ -54,41 +54,41 @@
 
 .bible-reference {
     display: block;
-    font-size: clamp(10px, 1.8vw, 16px);
+    font-size: var(--font-size-body-small);
     margin-top: 0px;
-    color: #666;
+    color: var(--color-neutral700);
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: var(--font-letter-spacing-body);
 }
 
 .start-button {
-    margin-top: 60px;
-    padding: 18px 50px;
-    background: rgba(255,255,255,0.2);
-    border: 2px solid rgba(12, 68, 59, 0.4);
-    color: rgba(12, 68, 59, 1);
-    font-size: clamp(16px, 2vw, 18px);
-    border-radius: 50px;
+    margin-top: var(--space-start-button-margin);
+    padding: var(--space-start-button-padding);
+    background: var(--color-surface-glass);
+    border: var(--size-border-width) solid var(--color-primary-border);
+    color: var(--color-primary);
+    font-size: var(--font-size-button);
+    border-radius: var(--radius-pill);
     cursor: pointer;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    font-family: 'Noto Serif KR', serif;
-    font-weight: 300;
-    letter-spacing: 2px;
+    backdrop-filter: blur(var(--shadow-glass-button-blur));
+    transition: var(--motion-transition-fast);
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-light);
+    letter-spacing: var(--font-letter-spacing-hero);
 }
 
 .start-button:hover {
-    background: rgba(12, 68, 59, 0.12);
-    border-color: rgba(12, 68, 59, 0.6);
-    color: rgba(12, 68, 59, 1);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(12, 68, 59, 0.18);
+    background: var(--color-primary-tint);
+    border-color: var(--color-primary-border-strong);
+    color: var(--color-primary);
+    transform: translateY(var(--size-hover-lift));
+    box-shadow: var(--shadow-button);
 }
 
 /* 태블릿 가로 */
 @media (max-width: 1024px) {
     .main-content {
-        padding: 30px 15px;
+        padding: var(--space-hero-padding-tablet);
     }
 }
 
@@ -99,48 +99,48 @@
     }
     
     .main-title {
-        margin-bottom: 15px;
+        margin-bottom: calc(var(--space-hero-title-margin) * 0.75);
     }
     
     .main-subtitle {
-        margin-top: 20px;
+        margin-top: calc(var(--space-hero-subtitle-margin) * 0.66);
     }
     
     .start-button {
-        margin-top: 40px;
-        padding: 16px 40px;
+        margin-top: var(--space-start-button-margin-tablet);
+        padding: var(--space-start-button-padding-tablet);
     }
 }
 
 /* 소형 모바일 */
 @media (max-width: 480px) {
     .main-content {
-        padding: 20px 15px;
+        padding: var(--space-hero-padding-mobile);
     }
 
     .bible-verse {
-        font-size: 14px;
-        line-height: 1.5;
+        font-size: var(--font-size-body);
+        line-height: var(--font-line-height-body);
     }
     
     .bible-reference {
-        font-size: 12px;
+        font-size: var(--font-size-body-small);
     }
     
     .start-button {
-        margin-top: 30px;
-        padding: 14px 30px;
+        margin-top: var(--space-start-button-margin-mobile);
+        padding: var(--space-start-button-padding-mobile);
     }
 }
 
 /* 초소형 모바일 */
 @media (max-width: 360px) {
     .bible-verse {
-        font-size: 13px;
+        font-size: var(--font-size-body);
     }
     
     .bible-reference {
-        font-size: 11px;
+        font-size: var(--font-size-body-small);
     }
 }
 
