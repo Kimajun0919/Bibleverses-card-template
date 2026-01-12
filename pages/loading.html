@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P16LG1F5RB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P16LG1F5RB');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로딩 중 - The Steps of Haneul</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/HaneulLogo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Adobe Fonts -->
+    <script>
+    (function(d) {
+      var config = {
+        kitId: 'wcb3eag',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){
+        h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";
+      },config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;
+      h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';
+      tk.async=true;tk.onload=tk.onreadystatechange=function(){
+        a=this.readyState;
+        if(f||a&&a!="complete"&&a!="loaded")return;
+        f=true;clearTimeout(t);
+        try{Typekit.load(config)}catch(e){}
+      };
+      s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/pages/loading-page.css">
+</head>
+<body>
+    <!-- 로딩 페이지 -->
+    <div class="loading-container">
+        <div class="loading-content">
+            <div class="loading-icon">
+                <div class="loading-circle"></div>
+            </div>
+            <p class="loading-text">당신을 향한 하나님의<br>마음을 담는 중입니다.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../data.js"></script>
+    <script src="../assets/js/utils/verse-selector.js"></script>
+    <script src="../assets/js/utils/verse-formatter.js"></script>
+    <script src="../assets/js/pages/loading-page.js"></script>
+</body>
+</html>
+
+
