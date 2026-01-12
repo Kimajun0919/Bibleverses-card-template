@@ -23,9 +23,9 @@ const brandBTheme = createTheme({
         letterSpacingResultLogo: '2.5px',
     },
     assets: {
-        background: 'assets/images/back.jpg',
-        logo: 'assets/logos/HaneulLogo.png',
-        favicon: 'assets/logos/HaneulLogo.png',
+        background: '/assets/images/back.jpg',
+        logo: '/assets/logos/HaneulLogo.png',
+        favicon: '/assets/logos/HaneulLogo.png',
     },
 });
 

@@ -157,7 +157,7 @@
     --motion-spin-timing: linear;
 
     /* assets */
-    --asset-background: url('assets/images/back.jpg');
+    --asset-background: url('/assets/images/back.jpg');
 }
 
 * {
