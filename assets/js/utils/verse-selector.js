@@ -1,45 +1,34 @@
 /**
- * 랜덤 구절 선택 유틸리티
- * - Fisher-Yates 셔플 알고리즘 사용
- * - localStorage를 활용한 중복 방지
+ * 말씀 구절 선택을 위한 최소 로직
+ * - 메모리 내에서만 셔플/순회
+ * - verses 배열 길이가 바뀌면 자동 리셋
  */
 
-function generateShuffledIndices(total) {
-    const indices = Array.from({ length: total }, (_, i) => i);
-    // Fisher–Yates with crypto
-    for (let i = total - 1; i > 0; i--) {
-        const randArray = new Uint32Array(1);
-        window.crypto.getRandomValues(randArray);
-        const j = randArray[0] % (i + 1);
-        [indices[i], indices[j]] = [indices[j], indices[i]];
+let verseOrder = [];
+let versePtr = 0;
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
-    return indices;
+    return array;
+}
+
+function ensureOrder() {
+    if (!Array.isArray(verseOrder) || verseOrder.length !== verses.length || versePtr >= verseOrder.length) {
+        verseOrder = shuffle(Array.from({ length: verses.length }, (_, i) => i));
+        versePtr = 0;
+    }
 }
 
 function getNextVerseIndex() {
-    const keyOrder = 'verseOrder';
-    const keyPtr = 'versePtr';
-    let order = [];
-    let ptr = 0;
-    try {
-        order = JSON.parse(localStorage.getItem(keyOrder) || '[]');
-        ptr = parseInt(localStorage.getItem(keyPtr) || '0', 10);
-    } catch (_) {
-        order = [];
-        ptr = 0;
-    }
-
-    // 재생성 조건: 비어있거나 길이 불일치/포인터 초과
-    if (!Array.isArray(order) || order.length !== verses.length || ptr >= order.length) {
-        order = generateShuffledIndices(verses.length);
-        ptr = 0;
-    }
-
-    const index = order[ptr];
-    ptr += 1;
-    localStorage.setItem(keyOrder, JSON.stringify(order));
-    localStorage.setItem(keyPtr, String(ptr));
+    ensureOrder();
+    const index = verseOrder[versePtr];
+    versePtr += 1;
     return index;
 }
 
-
+if (typeof window !== 'undefined') {
+    window.getNextVerseIndex = getNextVerseIndex;
+}
