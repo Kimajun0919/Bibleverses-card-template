@@ -160,13 +160,16 @@
 }
 
 .verse-content {
-    font-size: var(--font-size-verse);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 6px;
     line-height: var(--font-line-height-verse);
+    font-size: var(--font-size-verse);
     color: var(--color-neutral750);
     text-align: center;
     margin: var(--space-verse-margin) 0;
     font-weight: var(--font-weight-light);
-    white-space: pre-line;
     word-break: keep-all;
     max-width: 100%;
     padding: var(--space-verse-padding-inline);
@@ -296,6 +299,7 @@
     
     .verse-content {
         margin: var(--space-verse-margin) 0;
+        gap: 2px 4px;
     }
     
     .button-container {
@@ -316,6 +320,7 @@
     
     .verse-content {
         line-height: var(--font-line-height-body);
+        gap: 2px 4px;
     }
     
     .button-container {
@@ -325,4 +330,11 @@
     .button-row {
         gap: var(--space-button-row-gap-mobile);
     }
+}
+
+/* 의미 단위 청크 스타일 */
+.flow-chunk {
+    display: inline-block;
+    word-break: keep-all;
+    text-align: center;
 }

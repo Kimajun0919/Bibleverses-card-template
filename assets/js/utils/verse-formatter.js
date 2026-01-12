@@ -1,37 +1,22 @@
 /**
- * 말씀 카드용 단순 포매터
- * - HTML <br> 태그를 줄바꿈으로 변환
- * - 공백 정리 후 지정 길이 기준으로 줄바꿈
+ * 말씀 카드용 플로우 포매터
+ * - <br> 기준으로 의미 단위를 분리해 span.flow-chunk로 감싼다.
+ * - 레이아웃 줄바꿈은 CSS flex-wrap + gap으로 처리한다.
  */
-
-function formatVerseForCard(text, maxLength = 25) {
+function formatVerseForCard(text) {
     if (!text) return '';
 
-    // 태그/공백 정리
-    const clean = text
-        .replace(/<br\s*\/?>/gi, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
+    const chunks = text.split(/<br\s*\/?>/gi);
 
-    const words = clean.split(' ');
-    const lines = [];
-    let current = '';
+    const html = chunks
+        .map((chunk) => {
+            const clean = chunk.trim();
+            if (!clean) return '';
+            return `<span class="flow-chunk">${clean}</span>`;
+        })
+        .join('');
 
-    for (const word of words) {
-        const candidate = current ? `${current} ${word}` : word;
-        if (candidate.length > maxLength && current) {
-            lines.push(current);
-            current = word;
-        } else {
-            current = candidate;
-        }
-    }
-
-    if (current) {
-        lines.push(current);
-    }
-
-    return lines.join('\n');
+    return html;
 }
 
 if (typeof window !== 'undefined') {
